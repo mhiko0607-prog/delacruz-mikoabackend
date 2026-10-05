@@ -147,7 +147,7 @@ $config['users_table'] = 'users';
 */
 $config['allow_origin'] = ([
     'https://api-tester.marasigan.dev',
-    'https://delacruz-mikoaui.onrender.com/']);
+    'https://delacruz-mikoaui.onrender.com']);
 
 /*
 |--------------------------------------------------------------------------
