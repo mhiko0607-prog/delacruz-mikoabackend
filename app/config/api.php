@@ -145,11 +145,9 @@ $config['users_table'] = 'users';
 | origins; do not use '*' for an authenticated API.
 |
 */
-$ui_origin = getenv('LAVALUST_UI_ORIGIN');
-$config['allow_origin'] = array_values(array_filter([
+$config['allow_origin'] = ([
     'https://api-tester.marasigan.dev',
-    $ui_origin ?: null
-]));
+    'https://delacruz-mikoaui.onrender.com/']);
 
 /*
 |--------------------------------------------------------------------------

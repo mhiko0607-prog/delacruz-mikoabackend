@@ -90,6 +90,19 @@ class ApiController extends Controller {
         $password = $input['password'] ?? '';
         $role = 'user';
 
+        if (array_key_exists('role', $input)) {
+            if (!is_string($input['role'])) {
+                $this->api->respond_error('Role must be a string.', 422);
+            }
+
+            $requested_role = strtolower(trim($input['role']));
+            if (!in_array($requested_role, ['user', 'admin'], true)) {
+                $this->api->respond_error('Invalid role.', 422);
+            }
+
+            $role = $requested_role;
+        }
+
         // Validation
         if (empty($username) || empty($email) || empty($password)) {
             $this->api->respond_error('Username, email, and password are required.', 400);

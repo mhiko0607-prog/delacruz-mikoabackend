@@ -3,8 +3,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 class Welcome extends Controller {
 	public function index() {
-		header('Location: ../lavalustui/', true, 302);
-		exit;
+		$this->call->view('welcome_page');
 	}
 }
 ?>

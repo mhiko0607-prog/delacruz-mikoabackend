@@ -161,7 +161,6 @@ class Api
     public function __construct()
     {
         $this->_lava = lava_instance();
-        $this->_lava->call->database(); // need toh dito
         $this->_lava->call->library('cache');
         $this->_lava->config->load('api');
 
